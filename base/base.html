@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p style="margin-bottom: 0px;">sign in:</p>
+        <input id="input" placeholder="nhap ten" value>
+        <br>
+        <button onclick="no()">OK</button>
+        <div id="h"></div>
+    </body>
+    <script>
+
+        ///variable
+        // var tuoi =18; // var int
+        // var tuoi1 = tuoi; 
+        // var name = "nhan"; // var string
+        // var dual = false; //var bool
+        
+        ////input-output
+        // console.log("hello");
+        // document.write("hello");
+        // name = window.prompt("nhap ten");
+        // document.write(tuoi1+" "+name+" "+dual + " ");
+
+        ////bool-count
+        // document.write(tuoi <30);
+        // document.write((tuoi+1)*3);
+
+
+        //// if-else
+        // var tuoi;
+        // tuoi = parseInt(window.prompt("nhap tuoi"));
+        // if(tuoi >= 18){
+        //     document.write(tuoi>=18);
+        // }else{
+        //     document.write(tuoi>=18);
+        // }
+
+        ////for
+        // var name ;
+        // name = window.prompt("nhap ten:")
+        // for(var i =0 ; i < 10 ;i++){
+        //     document.write("virus vs " + name +"<br>");
+        // }
+
+        ///variable object
+        // var doituong ={
+        //     ten : "nhan",
+        //     kill : 100,
+        //     tuoi : 18,
+        //     contry:{
+        //         xa : "camxuyen",
+        //         tinh : "hatinh",
+        //         quocgia : "vietnam",
+        //     }
+        // }
+        // document.write(doituong.contry.quocgia);
+
+        ////funtion
+        // var tinh_tuoi = function (){
+        //     var namsinh =  parseInt(window.prompt("nhap tuoi:"));
+        //     tuoi = 2025 - namsinh;
+        //     document.write(tuoi); 
+        // }
+        // tinh_tuoi();
+
+        /////array
+        // var a = [1,2,3,4,5,6,7];
+        // document.write(a[0] + " " + a.length + "<br>");
+        // a.push("k");
+        // document.write(a , "<br>" , a.length);
+        // a.pop();
+        // document.write("<br>" , a.length , "<br>" , a);
+
+        ////string
+        // var s = " aaflkjladf"
+        // document.write(s[0] + " " + s.length);
+
+        ////DOM
+        var no = function(){
+           var k = document.getElementById("input").value;
+           var h = "tra no di :"+ k;
+           document.getElementById("h").innerHTML = h;
+        }
+
+        setTimeout(no,5000);
+
+        // save data = localstorage
+
+
+
+    </script>
+</html>
