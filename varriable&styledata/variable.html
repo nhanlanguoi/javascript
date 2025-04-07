@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button onclick="console.log(`Show Quantity : ${Quantity}`)">Show Quantity</button>
+        <button onclick="Quantity = Quantity + 1;console.log(`Show Quantity : ${Quantity}`)">Add to Card</button>
+        <button onclick="Quantity += 2;console.log(`Show Quantity : ${Quantity}`)">+2</button>
+        <button onclick="Quantity += 3;console.log(`Show Quantity : ${Quantity}`)">+3</button>
+        <button onclick="Quantity = 0;console.log(`Show Quantity : ${Quantity}`)">Reset card</button>
+        <!--bt-->
+        <br>
+        <br>
+        <button onclick="count += '1' ;console.log(`show : ${count}`);" >1</button>
+        <button onclick="count += '2';console.log(`show : ${count}`); ">2</button>
+        <button onclick="count += '3';console.log(`show : ${count}`); ">3</button>
+        <button onclick="s1 = count ; count = '';vr = '+' ;console.log(`show : ${s1}`);" >+</button>
+        <button onclick="s1 = count ; count = '';vr = '-';console.log(`show : ${s1}`); ">-</button>
+        <button onclick="s1 = count ; count = '';vr = '*';console.log(`show : ${s1}`); ">*</button>
+        <button onclick="s1 = count ; count = '';vr = '/';console.log(`show : ${s1}`); ">/</button>
+        <button onclick="s2 = count ; count = '' ; ans = tinh(s1 , vr , s2) ;vr = '' ; document.getElementById('input').innerHTML = ans ;s1 = ''; s2 = '' ;">=</button>
+        
+        <div  id="input"></div>
+
+    </body>
+    <script>
+        //let ,var , const is variable but it different variable about space action of its.and const is private varible
+
+        console.log(typeof "hello");
+        let Quantity = 0;
+        console.log(typeof Quantity);
+
+        var tinh  = function(t,l,k){
+            let m =0;
+            switch (l){
+                case '+' :
+                    m = parseInt(t) + parseInt(k);
+                    break;
+                case '-' :
+                    m = parseInt(t) - parseInt(k);
+                    break;
+                case '*' :
+                    m = parseInt(t) * parseInt(k);
+                    break;
+                case '/' :
+                    m = parseInt(t) / parseInt(k);
+                    break;
+                default :
+                    m = parseInt(t);
+            }
+            return m;
+        };
+
+        let count ='';
+        let s1 = '';
+        let s2 ='';
+        let vr = '';
+        let ans ='';
+    </script>
+
+</html>
+
+
