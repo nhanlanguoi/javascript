@@ -1,0 +1,88 @@
+
+
+<div>keo bua bao</div>
+<button onclick="var k1 = Math.random();
+if(k1 >=0 && k1 <=1/3){
+    document.getElementById('ht').innerHTML = 'hoa';
+    keobuabao.hoa++;
+}else if(k1> 1/3 && k1 <=2/3){
+    document.getElementById('ht').innerHTML = 'thang';
+    keobuabao.thang++;
+}else{
+    document.getElementById('ht').innerHTML = 'thua';
+    keobuabao.thua++;
+}; inra();">rock</button> 
+<button onclick="var k1 = Math.random();
+if(k1 >=0 && k1 <=1/3){
+    document.getElementById('ht').innerHTML = 'thang';
+    keobuabao.thang++;
+}else if(k1> 1/3 && k1 <=2/3){
+    document.getElementById('ht').innerHTML = 'hoa';
+    keobuabao.hoa++;
+}else{
+    document.getElementById('ht').innerHTML = 'thua';
+    keobuabao.thua++;
+}; inra();">paper</button>   
+<button onclick="var k1 = Math.random();
+if(k1 >=0 && k1 <=1/3){
+    document.getElementById('ht').innerHTML = 'thua';
+    keobuabao.thua++;
+}else if(k1> 1/3 && k1 <=2/3){
+    document.getElementById('ht').innerHTML = 'thang';
+    keobuabao.thang++;
+}else{
+    document.getElementById('ht').innerHTML = 'hoa';
+    keobuabao.hoa++;
+}; inra()">scissors</button>
+<br>
+<div id="ht"></div> 
+<br> 
+<br>
+<div id="hk">
+
+</div>
+
+
+<script>
+    var object2 = {
+        so : 1,
+        tuoi : 12,
+        que_quan : {
+            tinh : 'hatinh',
+            mien : 'trung',
+        }
+    };
+    object2.que_quan.tinh = 'Quang_tri';
+    console.log(object2.que_quan.mien);
+    console.log(object2.que_quan.tinh);
+    console.log(object2);
+    object2.newProperty = true;
+    console.log(object2);
+    delete object2.newProperty;
+    console.log(object2);
+
+
+    var keobuabao = {
+        thang : 0,
+        hoa : 0,
+        thua : 0,
+    };
+    function inra(){
+        alert( `thang: ${keobuabao.thang} , hoa: ${keobuabao.hoa} , thua: ${keobuabao.thua}`);
+    };
+
+    const funtion1 ={
+        id : 1,
+        fun: function name(){
+            console.log('hello');
+        }
+    };
+    funtion1.fun();
+
+
+    console.log(JSON.stringify(object2));
+    console.log(typeof JSON.stringify(object2));
+
+    var t = JSON.stringify(object2);
+    console.log(JSON.parse(t));
+</script>

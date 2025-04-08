@@ -1,0 +1,19 @@
+<button onclick="k = window.prompt('input number : ');k = hello(k);
+    document.getElementById('kd').innerHTML = k;">set</button>
+<div id="kd"></div>
+
+<script>
+
+    let k;
+    function hello(m){
+        if(m == 1){
+            return 1;
+        }
+        return m*hello(m-1);
+    }
+
+    
+
+</script>
+
+
