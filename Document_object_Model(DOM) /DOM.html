@@ -6,9 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <button>hello</button>
+    <button class="js1">hello</button>
+
+    <button class="js2">sleect</button>
+    <script>
+        // document.body.innerHTML = 'hello';
+        document.title = 'good job!';
+        //document : you can look like object 
+        console.log(document.body);
+        
+        console.log(typeof document.body);
+        console.log(document.body.innerHTML);
+        // document.body.innerHTML = "<button>chac la dung </button>";
+        console.log(document.querySelector('button'));
+        document.querySelector('button').innerHTML = 'changer';
+        document.querySelector('.js2').innerHTML = 'kkk';
+        const dc = document.querySelector('.js2')
+        console.log(dc);
+        
+    </script>
 </body>
-<script>
-    
-</script>
+
 </html>
