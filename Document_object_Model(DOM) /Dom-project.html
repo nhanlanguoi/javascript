@@ -3,12 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dom project</title>
 </head>
 <body>
+    <mark>ksadfasd</mark>
+    <div style="border-style: solid;border-bottom-width:0.5px ;border-color: gray;"></div>
+    <p>2<sup>2</sup></p>
     
+    <p>
+        Youtube subcribe button
+    </p>
+    <button onclick="
+    first();
+    " class="first">
+        Subcribe
+    </button>
+    <br style="margin-bottom: 20px;">
+    <p>
+        Rock Paper scissors
+    </p>
+    <a href="./Dom-project-rock.html">Click here</a>
+    <br style="margin-bottom: 20px;">
+
+    <p>Amazon shipping calculator</p>
+    <p>Order under $40 = +$10 shipping.</p>
+    <p>Order over $40 = FREE shipping.</p>
+    <input class="js-cost-input" type="text" placeholder="Cost of order" onkeydown="
+    console.log(event.key);
+    click1();">
+    <button onclick="calculateTotal()">calculator</button>
+    <p class="js-total"></p>
+    <br>
+    <a href=""></a>
+    <button class="b1" onclick="hien('head')">head</button>
+    <button class="b2" onclick="hien('tail')">tail</button>
+    <p class="h1"  ></p>
+    <input class="ip1"  >
+    <button class="b3" onclick="tinh()" >caculator</button>
+    <p class="h2"></p>
+
+    <input class="ip2" onkeyup="hientrenp()" >
+    <p class="h4"></p>
 </body>
 <script>
+    window.document
+    window.console
+    window.alert
+
+
+    console.log(document.querySelector('.first'));
+
+    function first(){
+        const k = document.querySelector('.first').innerHTML;
+        if(k == 'Subcribe'){
+            document.querySelector('.first').innerHTML = 'Subcribed';
+        }else{
+            document.querySelector('.first').innerHTML = 'Subcribe';
+        }
+    }
+
+    function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        const cost = Number(inputElement.value) * 100;
+
+        if (cost < 3500) {
+          document.querySelector('.js-total')
+            .innerHTML = `$${(cost + 1000) / 100}`;
+        } else {
+          document.querySelector('.js-total')
+            .innerHTML = `$${cost / 100}`;
+        }
+    }
+
+    function click1(){
+        if(event.key === "Enter"){
+            calculateTotal();
+        }
+    }
+
+
+    function hien(t){
+        let hien ;
+        if(t === 'head'){
+            hien = 'head';
+        }else{
+            hien = 'tails';
+        }
+        document.querySelector('.h1').innerHTML = `You chose: ${hien}`;
+    }
+
+    function tinh(){
+        let so1 = Number(document.querySelector('.ip1').value) ;//lấy từ input phải dùng .value
+        document.querySelector('.h2').innerHTML = `$${so1}`;
+    }
+    
+    function hientrenp(){
+        document.querySelector('.h4').innerHTML = document.querySelector('.ip2').value;
+    }
+
     
 </script>
 </html>
