@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: black;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="font-family: sans-serif;color: white;">Rock Paper Scissors</h1>
+    <button style="background-color: black;border-style: solid;border-color: white;border-width: 2px;border-radius: 100px;padding: 0px;" class="brock" onclick=";play('Rock',document.querySelector('.brock').innerHTML);"><img style="background-color: black;width: 50px;border-radius: 100px;padding: 20px;vertical-align: middle;" src="./img/rock-emoji.png" alt="erro"></button>
+    <button style="background-color: black;border-style: solid;border-color: white;border-width: 2px;border-radius: 100px;padding: 0px;" class="bpaper" onclick="play('Paper',document.querySelector('.bpaper').innerHTML);"><img style="background-color: black;width: 50px;border-radius: 100px;padding: 20px;vertical-align: middle;" src="./img/paper-emoji.png" alt="erro"></button>
+    <button style="background-color: black;border-style: solid;border-color: white;border-width: 2px;border-radius: 100px;padding: 0px;"  class="bsciss" onclick="play('Scissors',document.querySelector('.bsciss').innerHTML);"><img style="background-color: black;width: 50px;border-radius: 45px;padding: 20px;vertical-align: middle;" src="./img/scissors-emoji.png" alt="erro"></button>
+    <p class="p1" style="color: white;font-family: sans-serif;font-size: 30px;"></p>
+    <p class="p2" style="color: white;font-family: sans-serif;"></p>
+    <p class="p3" style="color: white;font-family: sans-serif;"></p>
+    <button class="ba" onclick="auto()">auto</button>
+    <button class="br" onclick="reset()">reset</button>
+    
+</body>
+<script src="./main.js"></script>
+</html>
