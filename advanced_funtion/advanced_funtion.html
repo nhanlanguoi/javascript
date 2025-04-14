@@ -6,10 +6,20 @@
     <title>Advanced funtion</title>
 </head>
 <body>
-    
+    <button class="bt">click</button>
 </body>
 
-<script src="./advanced-funtion.js">
+<script > //src="./advanced-funtion.js"
+    const k = document.querySelector('.bt');
+    const eventListener = ()=>{
+        console.log('hello');
+    }
 
+    k.addEventListener('click' , eventListener);
+    // Sau 5 giây, gỡ bỏ sự kiện
+setTimeout(() => {
+    k.removeEventListener('click', eventListener);
+    console.log('Đã gỡ sự kiện click');
+}, 5000);
 </script>
 </html>
