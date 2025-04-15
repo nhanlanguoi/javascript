@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    /*
+    🧠 Ghi nhớ cơ bản về localStorage
+localStorage là nơi lưu trữ dữ liệu trên trình duyệt, và nó sẽ không bị mất khi bạn reload lại trang.
+
+📝 Các lệnh cơ bản:
+Mục đích	Cách dùng	Ghi chú
+Lưu dữ liệu	localStorage.setItem('tên', giá_trị);	Giá trị phải là chuỗi (string). Nếu là object, dùng JSON.stringify()
+Lấy dữ liệu	let a = localStorage.getItem('tên');	Trả về string. Nếu đã lưu object, dùng JSON.parse() để chuyển lại object
+Xóa 1 mục	localStorage.removeItem('tên');	Xóa một key cụ thể
+Xóa tất cả	localStorage.clear();	Xóa hết dữ liệu trong localStorage
+
+
+
+✅ Ví dụ dùng với object:
+javascript
+    */
+
+let user = {
+  name: 'Nam',
+  score: 100
+};
+
+// Lưu
+localStorage.setItem('player', JSON.stringify(user));
+
+console.log(JSON.stringify(user))
+// Lấy
+let savedUser = JSON.parse(localStorage.getItem('player'));
+console.log(localStorage.getItem('player'));
+console.log(savedUser);
+console.log(savedUser.name); // Kết quả: Nam
+
+let nguoidung ={
+    name : '',
+};
+
+localStorage.setItem('nguoidung'  , JSON.stringify(nguoidung));
+nguoidung = JSON.parse(localStorage.getItem('nguoidung'));
+nguoidung.name = 'nhan';
+localStorage.setItem('nguoidung' ,JSON.stringify(nguoidung));
+console.log(JSON.parse(localStorage.getItem('nguoidung')));
+</script>
+</html>
