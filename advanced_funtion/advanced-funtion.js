@@ -106,9 +106,6 @@ setInterval(function(){//set a variable run in millisecond
 Duyệt qua từng phần tử của mảng và thực hiện một hành động nào đó (ví dụ: in ra, tính toán...).
 
 📌 Cú pháp:
-js
-Sao chép
-Chỉnh sửa
 array.forEach(function(value, index) {
     // code xử lý tại đây
 });
@@ -132,9 +129,6 @@ index → vị trí (số thứ tự) của phần tử
 Lọc ra các phần tử thoả điều kiện, và trả về mảng mới.
 
 📌 Cú pháp:
-js
-Sao chép
-Chỉnh sửa
 let newArray = array.filter(function(value, index){
     return điều_kiện; // true thì giữ lại, false thì bỏ
 });
@@ -154,9 +148,6 @@ console.log(filtered); // 👉 [7, 8]
 Tạo mảng mới bằng cách biến đổi từng phần tử của mảng ban đầu.
 
 📌 Cú pháp:
-js
-Sao chép
-Chỉnh sửa
 let newArray = array.map(function(value, index){
     return gì_đó; // trả về giá trị mới
 });
