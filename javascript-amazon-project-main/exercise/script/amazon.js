@@ -1,5 +1,3 @@
-
-import { cart } from "../data/cart";
 console.log('hello');
 
 // const products = [
@@ -42,35 +40,35 @@ console.log('hello');
 // ];
 
 let productHtml =``
-products.forEach((product)=>{
+products.forEach((products)=>{
     productHtml += 
     `
     <div class="product-container">
           <div class="product-image-container">
             <img class="product-image"
-              src="${product.image}">
+              src="${products.image}">
           </div>
 
           <div class="product-name limit-text-to-2-lines">
             ${
-                product.name
+                products.name
             }
           </div>
 
           <div class="product-rating-container">
             <img class="product-rating-stars"
-              src="images/ratings/rating-${product.rating.stars*10}.png">
+              src="images/ratings/rating-${products.rating.stars*10}.png">
             <div class="product-rating-count link-primary">
-              ${product.rating.count}
+              ${products.rating.count}
             </div>
           </div>
 
           <div class="product-price">
-            $${(product.priceCents/100).toFixed(2)} <!--get two number behind dot-->
+            $${(products.priceCents/100).toFixed(2)} <!--get two number behind dot-->
           </div>
 
           <div class="product-quantity-container">
-            <select>
+            <select class="js-quantity-selector-${products.id}">
               <option selected value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -91,7 +89,7 @@ products.forEach((product)=>{
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary js-add-to-cart" data-product-Id="${product.id}">
+          <button class="add-to-cart-button button-primary js-add-to-cart" data-product-Id="${products.id}">
             Add to Cart
           </button>
         </div>
@@ -107,30 +105,41 @@ document.querySelectorAll('.js-add-to-cart')
     button.addEventListener('click' , ()=>{
       console.log(button.dataset);//syntax data-[tên-attribute]="giá trị" in button .js-add-to-cart
       const productId = button.dataset.productId;
-
+      
       let machingItem;
       cart.forEach((item)=>{
         if(productId === item.productId){
           machingItem = item;
         }
       });
+      let select = document.querySelector('select').value;
+      console.log(select);
+      
+      
 
+      const quantitySelector = document.querySelector(
+        `.js-quantity-selector-${productId}`
+      );
+      
+      const quantity = Number(quantitySelector.value);
+      
+
+      let cartQuantity =0;
+      cart.forEach((item)=>{
+        cartQuantity += item.quantity;
+        
+      });
+      
       if(machingItem){
-        machingItem.quantity++;
+        machingItem.quantity += quantity;
       }else{
         cart.push({
           productId: productId,
           quantity:1,
         });
       }
-
-
-      let cartQuantity =0;
-      cart.forEach((item)=>{
-        cartQuantity += item.quantity;
-      });
-
       document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+      
       console.log(cartQuantity);      
       console.log(cart);
     })
