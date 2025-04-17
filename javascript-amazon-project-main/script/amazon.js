@@ -1,6 +1,10 @@
 
-import { cart } from "../data/cart";
-import { products } from "../data/products";
+import { cart,addtocart } from '../data/cart.js';
+import { products } from "../data/products.js";
+import { formatcurrency } from './utils/money.js';
+// import * as carts from '../data/cart.js';
+//carts.cart
+//carts.addtocart('id');
 console.log('hello');
 
 // const products = [
@@ -42,6 +46,19 @@ console.log('hello');
 //     }
 // ];
 
+
+function updateCartQuantity(){
+
+  let cartQuantity =0;
+  cart.forEach((item)=>{
+    cartQuantity += item.quantity;
+  });
+
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+  console.log(cartQuantity);      
+  console.log(cart);
+}
+
 let productHtml =``
 products.forEach((product)=>{
     productHtml += 
@@ -67,7 +84,7 @@ products.forEach((product)=>{
           </div>
 
           <div class="product-price">
-            $${(product.priceCents/100).toFixed(2)} <!--get two number behind dot-->
+            $${formatcurrency(product.priceCents)} <!--get two number behind dot-->
           </div>
 
           <div class="product-quantity-container">
@@ -109,30 +126,7 @@ document.querySelectorAll('.js-add-to-cart')
       console.log(button.dataset);//syntax data-[tên-attribute]="giá trị" in button .js-add-to-cart
       const productId = button.dataset.productId;
 
-      let machingItem;
-      cart.forEach((item)=>{
-        if(productId === item.productId){
-          machingItem = item;
-        }
-      });
-
-      if(machingItem){
-        machingItem.quantity++;
-      }else{
-        cart.push({
-          productId: productId,
-          quantity:1,
-        });
-      }
-
-
-      let cartQuantity =0;
-      cart.forEach((item)=>{
-        cartQuantity += item.quantity;
-      });
-
-      document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
-      console.log(cartQuantity);      
-      console.log(cart);
+      addtocart(productId);
+      updateCartQuantity();
     })
 });
